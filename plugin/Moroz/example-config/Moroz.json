@@ -1,0 +1,15 @@
+{
+  "ConfigVersion": 1,
+  "Forward": 8,
+  "Up": 2.7,
+  "Right": 0,
+  "FontSize": 32,
+  "UnitsPerPixel": 0.01,
+  "FontName": "Arial",
+  "ResetEachRound": false,
+  "CountTeamKills": false,
+  "Background": true,
+  "Red": 214,
+  "Green": 232,
+  "Blue": 242
+}

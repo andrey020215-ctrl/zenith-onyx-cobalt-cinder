@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", sans-serif;
+  --color-bg: #10161b;
+  --color-surface: #171f26;
+  --color-drift: #314049;
+  --color-fg: #e7eef3;
+  --color-muted: #93a3af;
+  --color-ice: #c5dbe8;
+  --color-ice-ink: #10161b;
+  --color-line: #2a3842;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+}
+
+:root {
+  --motion-quick: 150ms;
+  --motion-fast: 250ms;
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-y-micro: 4px;
+  --motion-blur-sm: 2px;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ice);
+    outline-offset: 2px;
+  }
+
+  h1 {
+    text-wrap: balance;
+  }
+}
+
+@keyframes digit-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--motion-y-micro));
+    filter: blur(var(--motion-blur-sm));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@keyframes snow-fall {
+  from {
+    transform: translateY(-12vh);
+  }
+  to {
+    transform: translateY(108vh);
+  }
+}
+
+@keyframes plus-fade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  30% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.digit {
+  display: inline-block;
+  animation: digit-in var(--motion-quick) var(--ease-smooth-out);
+}
+
+.plus {
+  animation: plus-fade 700ms var(--ease-smooth-out) forwards;
+}
+
+.flake {
+  animation-name: snow-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.winter-view {
+  position: relative;
+  min-height: 22rem;
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+}
+
+.winter-view img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+.winter-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgb(16 22 27 / 0.62) 0%,
+    rgb(16 22 27 / 0.08) 34%,
+    rgb(16 22 27 / 0.28) 100%
+  );
+  pointer-events: none;
+}
+
+.plaque {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border: 1px solid color-mix(in srgb, var(--color-ice) 42%, var(--color-line));
+  border-radius: var(--radius-md);
+  background: rgb(16 22 27 / 0.78);
+  padding: 0.45rem 1.15rem 0.5rem;
+  box-shadow: 0 10px 28px rgb(0 0 0 / 0.28);
+}
+
+.plaque-mark {
+  width: 0.7rem;
+  height: 0.7rem;
+  background: var(--color-ice);
+  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .digit,
+  .plus,
+  .flake {
+    animation: none;
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Мороз — счётчик убийств для CS2",
+      "hasCanvas": false,
+      "bodyTextLen": 203,
+      "bodyTextHash": "f12666ecaf07453a9c492d061a35269d9f8cf46660c1674185731af7515cd473",
+      "bodyTextPrefix": "CS2 Мороз Скачать плагин CT 0 0 0 0 T Отдельный плагин для зимне",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Мороз — счётчик убийств для CS2",
+      "hasCanvas": false,
+      "bodyTextLen": 203,
+      "bodyTextHash": "f12666ecaf07453a9c492d061a35269d9f8cf46660c1674185731af7515cd473",
+      "bodyTextPrefix": "CS2 Мороз Скачать плагин CT 0 0 0 0 T Отдельный плагин для зимне",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}
